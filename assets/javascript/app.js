@@ -9,8 +9,11 @@ function readSingleFile(e) {
 
   reader.onload = function (e) {
     let contents = e.target.result;
+
+    let studentData = objectifyCsv(contents)
     
-    displayContents(objectifyCsv(contents))
+    displayContents(studentData)
+    CreateCsv(studentData)
     
   };
 
