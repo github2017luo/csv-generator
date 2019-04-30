@@ -1,62 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<!-- Compiled and minified CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>
+		<!-- Custom Style Sheet -->
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<title>CSV Generator</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Custom Style Sheet -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>CSV Generator</title>
-</head>
+	<body>
+		<nav>
+			<div class="nav-wrapper blue darken-4">
+				<a href="#" class="brand-logo center">CSV Generator</a>
+			</div>
+		</nav>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <form action="#">
-                    <div class="file-field input-field">
-                        <div class="btn blue">
-                            <span>File</span>
-                            <input id="file-input" type="file">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
-                    </div>
-                </form>
-                <a href="#" id="download-btn" class="btn primary hidden">Download CSV</a>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col s6">
-                <table id="table" class="striped responsive-table hidden">
-                    <thead>
-                        <tr>
-                            <th>Student ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                        </tr>
-                    </thead>
+		<div id="main-container" class="container">
+			<div class="row">
+				<div class="col s12 m4">
+					<div class="input-field col s12">
+						<select>
+							<option value="" disabled selected>Choose your option</option>
+							<option value="1">Option 1</option>
+							<option value="2">Option 2</option>
+							<option value="3">Option 3</option>
+						</select>
+						<label>Materialize Select</label>
+					</div>
+				</div>
+				<div class="col s12 m4">
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="username-prefix" type="text" />
+							<label for="username-prefix">Username Prefix</label>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m4">
+					<form action="#">
+						<div class="file-field input-field">
+							<div class="btn yellow darken-4">
+								<span>File</span>
+								<input id="file-input" type="file" />
+							</div>
+							<div class="file-path-wrapper">
+								<input class="file-path validate" type="text" />
+							</div>
+						</div>
+					</form>
+					<a href="#" id="download-btn" class="btn primary hidden">
+						Download CSV
+					</a>
+				</div>
+			</div>
 
-                    <tbody id="table-body">
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <!-- ======================================================================================================== -->
-    <!-- SCRIPTS -->
-    <!-- ======================================================================================================== -->
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- Custom app script -->
-    <script src="./assets/javascript/CreateCSV.js"></script>
-    <script src="./assets/javascript/app.js"></script>
-    <!-- ======================================================================================================== -->
-</body>
+			<div class="row">
+				<div class="col s6">
+					<table id="table" class="striped responsive-table hidden">
+						<thead>
+							<tr>
+								<th>Student ID</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+							</tr>
+						</thead>
 
+						<tbody id="table-body"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- ======================================================================================================== -->
+		<!-- SCRIPTS -->
+		<!-- ======================================================================================================== -->
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<!-- Custom app script -->
+		<script src="./assets/javascript/init.js"></script>
+		<script src="./assets/javascript/CreateCSV.js"></script>
+		<script src="./assets/javascript/app.js"></script>
+		<!-- ======================================================================================================== -->
+	</body>
 </html>
